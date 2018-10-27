@@ -1,13 +1,19 @@
-#roulette {
+#chart-area {
+   position:absolute;
+   top:30; 
    padding:25px 0 0;
+   z-index:1;
 }
 #hari {
    margin-left:-5px;
    position:absolute;
-   top:0;
-   left:50%;
+   top:25;
+   z-index:2;
+   left:150;
 }
 #result {
+   bottom:150;
+   z-index:3;
    padding:20px;
    text-align:center;
 }
