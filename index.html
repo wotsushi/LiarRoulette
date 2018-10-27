@@ -11,10 +11,18 @@
 </head>
 
 <body>
+  <form id="roulette-conf">
+    <input type="number" name="a">
+    <input type="number" name="b">
+    <input type="number" name="c">
+    <input type="number" name="d">
+    <input type="button" value="Set" onClick="updateRoulette()">
+  </form>
+
 <div id="main">
 <div id="roulette">
    <div id="hari"><img src="img/hari.png"></div>
-  
+
 <div id="canvas-holder" style="width:40%">
   <canvas id="chart-area"></canvas>
 </div>
@@ -29,10 +37,12 @@
         data: [
             1,
             2,
+            3,
             10
         ],
 		    backgroundColor: [
-    		  window.chartColors.red,
+          window.chartColors.red,
+          window.chartColors.yellow,
     			window.chartColors.green,
       		window.chartColors.blue,
 		    ],
@@ -41,7 +51,8 @@
       labels: [
         'a',
         'b',
-        'c'
+        'c',
+        'd'
       ]
   	},
     options: {
@@ -59,27 +70,27 @@
       //ルーレット停止後に実行される処理
       var result = function(){
        switch(stopNumber){
-          
+
           //1の時の処理
           case 1:
             $("#result span").text("①でした！")
             break;
-          
+
           //2の時の処理
           case 2:
             $("#result span").text("②でした！")
             break;
-          
+
           //3の時の処理
           case 3:
             $("#result span").text("③でした！")
             break;
-          
-          //4の時の処理 
+
+          //4の時の処理
           case 4:
             $("#result span").text("④でした！")
             break;
-          
+
           //5の時の処理
           case 5:
             $("#result span").text("⑤でした！")
@@ -98,6 +109,15 @@
       }
     });
   });
+  function updateRoulette() {
+    config.data.datasets[0].data = [
+      $('#roulette-conf [name=a]').val(),
+      $('#roulette-conf [name=b]').val(),
+      $('#roulette-conf [name=c]').val(),
+      $('#roulette-conf [name=d]').val(),
+    ];
+    window.myPie.update();
+  }
 </script>
 
 </body>
