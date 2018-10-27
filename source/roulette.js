@@ -19,8 +19,9 @@ var speed = 10;   //ルーレットの回転速度
      }
     };
 
-var rotation = setInterval(function(){
-    $("#chart-area").animate({rotate: 360},2000);
-    angle += speed;
- }, 5);
+ function rotate(){
+    $("#chart-area").animate({rotate: 360},2000, 'linear',function(){rotate();});  
+ };
+
+ rotate();
 });
