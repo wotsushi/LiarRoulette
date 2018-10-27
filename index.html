@@ -1,6 +1,8 @@
 <html lang="ja">
 <head>
+<link rel="stylesheet" type="text/css" href="./source/roulette.css">
 <script src="./source/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="http://beneposto.pl/jqueryrotate/js/jQueryRotateCompressed.js"></script>
 <script type="text/javascript" src="./source/jquery.rotate.js"></script>
 <script type="text/javascript" src="./source/roulette.js"></script>
 <script src="./Chart.js"> </script>
@@ -10,12 +12,14 @@
 
 <body>
 <div id="main">
-  <div id="roulette">
-   <img src="./img/target.png" id="mato">
-  <head>
-  <div id="canvas-holder" style="width:40%">
-    <canvas id="chart-area"></canvas>
-  </div>
+<div id="roulette">
+   <div id="hari"><img src="img/hari.png"></div>
+  
+<div id="canvas-holder" style="width:40%">
+  <canvas id="chart-area"></canvas>
+</div>
+
+<div id="result"> result<span></span></div>
 </div>
 <script>
   var config = {
@@ -51,6 +55,37 @@
     var ctx = document.getElementById('chart-area').getContext('2d');
     window.myPie = new Chart(ctx, config);
   };
+
+      //ルーレット停止後に実行される処理
+      var result = function(){
+       switch(stopNumber){
+          
+          //1の時の処理
+          case 1:
+            $("#result span").text("①でした！")
+            break;
+          
+          //2の時の処理
+          case 2:
+            $("#result span").text("②でした！")
+            break;
+          
+          //3の時の処理
+          case 3:
+            $("#result span").text("③でした！")
+            break;
+          
+          //4の時の処理 
+          case 4:
+            $("#result span").text("④でした！")
+            break;
+          
+          //5の時の処理
+          case 5:
+            $("#result span").text("⑤でした！")
+            break;
+       };
+    };
   $(function() {
     $("#main").swipe( {
       swipe:function(event, direction, distance, duration, fingerCount, fingerData) {
@@ -67,8 +102,4 @@
 
 </body>
 </html>
-<!-- <div id="roulette"> -->
-<!--    <img src="./img/target.png" id="mato"> -->
-<!-- </div> -->
 
-<!-- <div id="result"> result<span></span></div> -->

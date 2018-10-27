@@ -19,9 +19,59 @@ var speed = 10;   //ルーレットの回転速度
      }
     };
 
- function rotate(){
-    $("#chart-area").animate({rotate: 360},2000, 'linear',function(){rotate();});  
- };
+
+    var rotation = setInterval(function(){
+        $("#chart-area").rotate(angle);
+        angle += speed;
+     }, 5);
+     
+     setTimeout(function(){
+      
+        //クルクル処理をしているsetIntervalをclear
+        clearInterval(rotation);
+        
+        //setIntervalで増えた余分な数値を減らし、逆回転を防ぐためにマイナス値にする
+        angle = angle%360-360;
+        
+        //停止位置までのアニメーション。完了するとresult()が実行される
+        $("#chart-area").rotate({
+           angle: angle, 
+           animateTo: stopAngle,
+           callback: result
+        });
+        $("#hari img").attr('src', $("#hari img").attr('src').replace('gif', 'png'));
+    }, timeout);
+  
+
+ //function rotate(){
+ //   $("#chart-area").animate({rotate: 360},2000, 'linear',function(){rotate();});  
+ //};
+
+ 
+
+//timeout秒後に停止させる処理
+setTimeout(function(){
+   
+    //クルクル処理をしているsetIntervalをclear
+    clearInterval(rotation);
+    
+    //setIntervalで増えた余分な数値を減らし、逆回転を防ぐためにマイナス値にする
+    angle = angle%360-360;
+    
+    //停止位置までのアニメーション。完了するとresult()が実行される
+    $("#mato").rotate({
+       angle: angle, 
+       animateTo: stopAngle,
+       callback: result
+    });
+    
+    //ルーレットの停止処理に入ったので針の画像を静止画へ変更
+    $("#hari img").attr('src', $("#hari img").attr('src').replace('gif', 'png'));
+  
+  }, timeout);
+ 
+ 
+
 
  rotate();
 });
