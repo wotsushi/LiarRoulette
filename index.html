@@ -5,18 +5,18 @@
 <script type="text/javascript" src="./source/roulette.js"></script>
 <script src="./Chart.js"> </script>
 <script src="./utils.js"> </script>
+<script type="text/javascript" src="./source/jquery.touchSwipe.min.js"></script>
 </head>
 
-
 <body>
-<div id="roulette">
+<div id="main">
+  <div id="roulette">
    <img src="./img/target.png" id="mato">
-<head>
-  
-<div id="canvas-holder" style="width:40%">
-  <canvas id="chart-area"></canvas>
+  <head>
+  <div id="canvas-holder" style="width:40%">
+    <canvas id="chart-area"></canvas>
+  </div>
 </div>
-
 <script>
   var config = {
     type: 'pie',
@@ -51,6 +51,18 @@
     var ctx = document.getElementById('chart-area').getContext('2d');
     window.myPie = new Chart(ctx, config);
   };
+  $(function() {
+    $("#main").swipe( {
+      swipe:function(event, direction, distance, duration, fingerCount, fingerData) {
+        if (direction === 'right') {
+          alert('右にスワイプ');
+        }
+        if (direction === 'left') {
+          alert('左にスワイプ');
+        }
+      }
+    });
+  });
 </script>
 
 </body>
