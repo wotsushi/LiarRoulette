@@ -110,13 +110,19 @@
     });
   });
   function updateRoulette() {
+      var total_val = Number($('#roulette-conf [name=a]').val()) + Number($('#roulette-conf [name=b]').val()) + Number($('#roulette-conf [name=c]').val()) + Number($('#roulette-conf [name=d]').val());
     config.data.datasets[0].data = [
-      $('#roulette-conf [name=a]').val(),
-      $('#roulette-conf [name=b]').val(),
-      $('#roulette-conf [name=c]').val(),
-      $('#roulette-conf [name=d]').val(),
+      (360 / total_val) * Number($('#roulette-conf [name=a]').val()),
+      (360 / total_val) * Number($('#roulette-conf [name=b]').val()),
+      (360 / total_val) * Number($('#roulette-conf [name=c]').val()),
+      (360 / total_val) * Number($('#roulette-conf [name=d]').val()),
     ];
     window.myPie.update();
+    roulette(
+    (360 / total_val) * Number($('#roulette-conf [name=a]').val()),
+    (360 / total_val) * Number($('#roulette-conf [name=b]').val()),
+    (360 / total_val) * Number($('#roulette-conf [name=c]').val()),
+    (360 / total_val) * Number($('#roulette-conf [name=d]').val()));
   }
 </script>
 
