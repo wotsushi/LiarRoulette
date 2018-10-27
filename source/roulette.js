@@ -20,7 +20,7 @@ var speed = 10;   //ルーレットの回転速度
     };
 
 var rotation = setInterval(function(){
-    $("#mato").animate({rotate: 360},2000);
+    $("#chart-area").animate({rotate: 360},2000);
     angle += speed;
  }, 5);
 });
