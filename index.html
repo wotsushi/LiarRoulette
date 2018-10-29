@@ -7,6 +7,7 @@
   <script src="./vendor/Chart.js"> </script>
   <script src="./vendor/utils.js"> </script>
   <script src="./vendor/jquery.touchSwipe.min.js"></script>
+  <script src="./vendor/lodash.js"></script>
 
   <script src="./js/roulette.js"></script>
 
@@ -15,14 +16,8 @@
 </head>
 
 <body>
-  <form id="roulette-conf" >
-    <input type="number" name="a">
-    <input type="number" name="b">
-    <input type="number" name="c">
-    <input type="number" name="d">
-    <input type="button" value="Set" onClick="updateRoulette()">
-  </form>
-
+  <p> <a href="./conf.html"> conf </a> </p>
+  <input type="button" value="Play" onClick="playRoulette()">
   <div id="main">
     <div id="roulette">
       <div id="hari"><img src="img/hari.png"></div>
@@ -30,10 +25,9 @@
       <div id="canvas-holder" style="width:40%">
         <canvas id="chart-area"></canvas>
       </div>
-
-      <div id="result"> result<span></span></div>
+      <div id="result"> <span></span></div>
     </div>
-
-  </body>
-  </html>
+  </div>
+</body>
+</html>
 
