@@ -6,17 +6,15 @@ const timeout = 2000;   //○秒後に停止
 // ルーレットの回転処理
 function playRoulette() {
   let x = _.random(1, _.sum(probs))
-  let accProbs = _.concat(0, _.range(1, probs.length).map(i => _.sum(_.take(probs, i))))
+  let accProbs = _.concat(0, _.range(1, probs.length + 1).map(i => _.sum(_.take(probs, i))))
   let stopNumber = _.find(
-    _.range(1, probs.length),
+    _.range(1, probs.length + 1),
     i => accProbs[i] >= x
   )
   let normalizedArea = JSON.parse(localStorage.getItem('areas')).map(area => 360 / _.sum(areas) * area)
 
   //停止位置の設定。1～360までの乱数を取得して挿入する
-  var stopAngle = 360 - Math.round(
-    _.sum(_.take(_.concat(0, areas), stopNumber)) + Math.random() * normalizedArea[stopNumber - 1] + 0.5
-  )
+  var stopAngle = 360 - _.sum(_.take(_.concat(0, normalizedArea), stopNumber)) - _.random(normalizedArea[stopNumber - 1])
 
   //ルーレットの角度の変数。停止位置の値を初期値に設定する
   var angle = stopAngle;
@@ -69,10 +67,12 @@ $(() => {
   $("#main").swipe( {
     swipe:function(event, direction, distance, duration, fingerCount, fingerData) {
       if (direction === 'right') {
-        alert('右にスワイプ');
+        alert('switch B');
+        probs = JSON.parse(localStorage.getItem('probB'));
       }
       if (direction === 'left') {
-        alert('左にスワイプ');
+        alert('switch A');
+        probs = JSON.parse(localStorage.getItem('probA'));
       }
     }
   });
