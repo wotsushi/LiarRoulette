@@ -1,14 +1,17 @@
 <html lang="ja">
 <head>
-<link rel="stylesheet" type="text/css" href="./source/roulette.css">
-<script src="./source/jquery-3.3.1.min.js"></script>
-<script type="text/javascript" src="./source/jQueryRotateCompressed.js"></script>
-<script type="text/javascript" src="./source/jquery.rotate.js"></script>
-<script type="text/javascript" src="./source/roulette.js"></script>
-<script src="./Chart.js"> </script>
-<script src="./utils.js"> </script>
-<script type="text/javascript" src="./source/jquery.touchSwipe.min.js"></script>
-<link rel="stylesheet" type="text/css" href="./style.css">
+  <meta http-equiv="content-type" charset="utf-8">
+  <script src="./vendor/jquery-3.3.1.min.js"></script>
+  <script src="./vendor/jQueryRotateCompressed.js"></script>
+  <script src="./vendor/jquery.rotate.js"></script>
+  <script src="./vendor/Chart.js"> </script>
+  <script src="./vendor/utils.js"> </script>
+  <script src="./vendor/jquery.touchSwipe.min.js"></script>
+
+  <script src="./js/roulette.js"></script>
+
+  <link rel="stylesheet" href="./css/roulette.css">
+  <link rel="stylesheet" href="./css/style.css">
 </head>
 
 <body>
@@ -20,113 +23,17 @@
     <input type="button" value="Set" onClick="updateRoulette()">
   </form>
 
-<div id="main">
-<div id="roulette">
-   <div id="hari"><img src="img/hari.png"></div>
+  <div id="main">
+    <div id="roulette">
+      <div id="hari"><img src="img/hari.png"></div>
 
-<div id="canvas-holder" style="width:40%">
-  <canvas id="chart-area"></canvas>
-</div>
+      <div id="canvas-holder" style="width:40%">
+        <canvas id="chart-area"></canvas>
+      </div>
 
-<div id="result"> result<span></span></div>
-</div>
-<script>
-  var config = {
-    type: 'pie',
-    data: {
-      datasets: [{
-        data: [
-            1,
-            2,
-            3,
-            10
-        ],
-		    backgroundColor: [
-          window.chartColors.red,
-          window.chartColors.yellow,
-    			window.chartColors.green,
-      		window.chartColors.blue,
-		    ],
-        label: 'data1'
-	    }],
-      labels: [
-        'a',
-        'b',
-        'c',
-        'd'
-      ]
-  	},
-    options: {
-      responsive: true,
-      legend: {
-        display: false
-      }
-	  }
-  };
-  window.onload = function() {
-    var ctx = document.getElementById('chart-area').getContext('2d');
-    window.myPie = new Chart(ctx, config);
-  };
+      <div id="result"> result<span></span></div>
+    </div>
 
-      //ルーレット停止後に実行される処理
-      var result = function(){
-       switch(stopNumber){
-
-          //1の時の処理
-          case 1:
-            $("#result span").text("①でした！")
-            break;
-
-          //2の時の処理
-          case 2:
-            $("#result span").text("②でした！")
-            break;
-
-          //3の時の処理
-          case 3:
-            $("#result span").text("③でした！")
-            break;
-
-          //4の時の処理
-          case 4:
-            $("#result span").text("④でした！")
-            break;
-
-          //5の時の処理
-          case 5:
-            $("#result span").text("⑤でした！")
-            break;
-       };
-    };
-  $(function() {
-    $("#main").swipe( {
-      swipe:function(event, direction, distance, duration, fingerCount, fingerData) {
-        if (direction === 'right') {
-          alert('右にスワイプ');
-        }
-        if (direction === 'left') {
-          alert('左にスワイプ');
-        }
-      }
-    });
-  });
-  function updateRoulette() {
-      var total_val = Number($('#roulette-conf [name=a]').val()) + Number($('#roulette-conf [name=b]').val()) + Number($('#roulette-conf [name=c]').val()) + Number($('#roulette-conf [name=d]').val());
-    config.data.datasets[0].data = [
-      (360 / total_val) * Number($('#roulette-conf [name=a]').val()),
-      (360 / total_val) * Number($('#roulette-conf [name=b]').val()),
-      (360 / total_val) * Number($('#roulette-conf [name=c]').val()),
-      (360 / total_val) * Number($('#roulette-conf [name=d]').val()),
-    ];
-    window.myPie.update();
-    roulette(
-    (360 / total_val) * Number($('#roulette-conf [name=a]').val()),
-    (360 / total_val) * Number($('#roulette-conf [name=b]').val()),
-    (360 / total_val) * Number($('#roulette-conf [name=c]').val()),
-    (360 / total_val) * Number($('#roulette-conf [name=d]').val()));
-  }
-</script>
-
-</body>
-</html>
+  </body>
+  </html>
 
