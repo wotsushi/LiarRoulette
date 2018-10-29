@@ -44,6 +44,7 @@ function playRoulette() {
 
 $(() => {
   var ctx = document.getElementById('chart-area').getContext('2d');
+  ctx.canvas.width = 500;
   window.myPie = new Chart(ctx, {
     type: 'pie',
     data: {
@@ -60,7 +61,7 @@ $(() => {
       labels: ['a', 'b', 'c', 'd']
     },
     options: {
-      responsive: true,
+      responsive: false,
       legend: { display: false}
     }
   });
