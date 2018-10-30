@@ -12,15 +12,18 @@
   <script src="./js/roulette.js"></script>
 
   <link rel="stylesheet" href="./css/roulette.css">
+  <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon"/>
+
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <script src="js/bootstrap.min.js"></script>
 </head>
 
 <body>
   <p> <a href="./conf.html"> conf </a> </p>
-  <input type="button" value="Play" onClick="playRoulette()">
+  <button type="button" class="btn btn-primary" type="submit" onClick="playRoulette()">Play</button>
   <div id="main">
     <div id="roulette">
       <div id="hari"><img src="img/hari.png"></div>
-
       <div id="canvas-holder" style="width:40%">
         <canvas id="chart-area"></canvas>
       </div>
