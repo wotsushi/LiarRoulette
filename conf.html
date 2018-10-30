@@ -4,28 +4,49 @@
   <script src="./vendor/jquery-3.3.1.min.js"></script>
   <script src="./vendor/lodash.js"></script>
   <script src="./js/conf.js"></script>
-  </head>
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <script src="js/bootstrap.min.js"></script>
+</head>
 
 <body>
-  <h2>Areas</h2>
-  <input type="number" id="area0" min=0>
-  <input type="number" id="area1" min=0>
-  <input type="number" id="area2" min=0>
-  <input type="number" id="area3" min=0>
+  <table class="table table-sm table-condensed table-borderd">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">param1</th>
+          <th scope="col">param2</th>
+          <th scope="col">param3</th>
+          <th scope="col">param4</th>
+        </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <th scope="row">Areas</th>
+        <td><input type="number" class="form-control input-normal" placeholder="0" id="area0"></td>
+        <td><input type="number" class="form-control input-normal" placeholder="0" id="area1"></td>
+        <td><input type="number" class="form-control input-normal" placeholder="0" id="area2"></td>
+        <td><input type="number" class="form-control input-normal" placeholder="0" id="area3"></td>
+      </tr>
+      <tr>
+        <th scope="row">Probabilities A</th>
+        <td><input type="number" class="form-control input-normal" placeholder="0" id="probA0"></td>
+        <td><input type="number" class="form-control input-normal" placeholder="0" id="probA1"></td>
+        <td><input type="number" class="form-control input-normal" placeholder="0" id="probA2"></td>
+        <td><input type="number" class="form-control input-normal" placeholder="0" id="probA3"></td>
+      </tr>
+      <tr>
+        <th scope="row">Probabilities B</th>
+        <td><input type="number" class="form-control input-normal" placeholder="0" id="probB0"></td>
+        <td><input type="number" class="form-control input-normal" placeholder="0" id="probB1"></td>
+        <td><input type="number" class="form-control input-normal" placeholder="0" id="probB2"></td>
+        <td><input type="number" class="form-control input-normal" placeholder="0" id="probB3"></td>
+        </tr>
+      </tbody>
+    </table>
 
-  <h2>Probabilities A</h2>
-  <input type="number" id="probA0">
-  <input type="number" id="probA1">
-  <input type="number" id="probA2">
-  <input type="number" id="probA3">
-
-  <h2>Probabilities B</h2>
-  <input type="number" id="probB0">
-  <input type="number" id="probB1">
-  <input type="number" id="probB2">
-  <input type="number" id="probB3">
 
   <br>
-  <input type="button" value="Save" onClick="updateRoulette()">
-  <p> <a href="./index.html"> Back </a> </p>
+  <button class="btn btn-primary btn-lg" type="button" onClick="updateRoulette()">Save</button>
+  </form>
+  <a href="./index.html" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Back</a>
 </body>
