@@ -51,5 +51,27 @@
   <button class="btn btn-primary btn-lg" type="button" onClick="updateRoulette()">Save</button>
   </form>
   <a href="./index.html" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Back</a>
-  <button class="btn btn-primary btn-lg" type="button" onClick="addParamRow()">Add Param</a>
+  
+  <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#confDialog" >Add Param</button>
+
+  <div class="modal" id="confDialog" tabindex="-1" role="dialog" aria-labelledby="staticModalLabel" aria-hidden="true" data-show="true" data-keyboard="false" data-backdrop="static">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Input Area Name</h4>
+          <button type="button" class="close" data-dismiss="modal">
+            <span aria-hidden="true">&#215;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p class="recipient">Area Name</p>
+          <input type="text" class="form-control input-normal" placeholder="area" id="areaN">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal" onClick="addParamRow()">Add</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
 </body>

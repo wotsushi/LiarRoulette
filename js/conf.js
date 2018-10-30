@@ -13,9 +13,10 @@ function updateRoulette() {
 }
 
 function addParamRow() {
+  var areaName = $('#areaN').val()
   var succNum = $('#confTable').prop('rows').length
   $('#confTable tbody > tr:last').after(`<tr>\
-                                         <th scope="row">Param${succNum}</th>\
+                                         <th scope="row">${areaName}</th>\
                                          <td><input type="number" class="form-control input-normal" placeholder="0" id="area${succNum}"></td>\
                                          <td><input type="number" class="form-control input-normal" placeholder="0" id="probA${succNum}"></td>\
                                          <td><input type="number" class="form-control input-normal" placeholder="0" id="probB${succNum}"></td>\
