@@ -9,38 +9,40 @@
 </head>
 
 <body>
-  <table class="table table-sm table-condensed table-borderd">
+  <table class="table table-sm table-condensed table-borderd" id="confTable">
       <thead class="thead-dark">
         <tr>
           <th scope="col">#</th>
-          <th scope="col">param1</th>
-          <th scope="col">param2</th>
-          <th scope="col">param3</th>
-          <th scope="col">param4</th>
+          <th scope="col">Areas</th>
+          <th scope="col">Probabilities A</th>
+          <th scope="col">Probabilities B</th>
         </tr>
       </thead>
       <tbody>
       <tr>
-        <th scope="row">Areas</th>
+        <th scope="row">Param1</th>
         <td><input type="number" class="form-control input-normal" placeholder="0" id="area0"></td>
-        <td><input type="number" class="form-control input-normal" placeholder="0" id="area1"></td>
-        <td><input type="number" class="form-control input-normal" placeholder="0" id="area2"></td>
-        <td><input type="number" class="form-control input-normal" placeholder="0" id="area3"></td>
-      </tr>
-      <tr>
-        <th scope="row">Probabilities A</th>
         <td><input type="number" class="form-control input-normal" placeholder="0" id="probA0"></td>
-        <td><input type="number" class="form-control input-normal" placeholder="0" id="probA1"></td>
-        <td><input type="number" class="form-control input-normal" placeholder="0" id="probA2"></td>
-        <td><input type="number" class="form-control input-normal" placeholder="0" id="probA3"></td>
+        <td><input type="number" class="form-control input-normal" placeholder="0" id="probB0"></td>
       </tr>
       <tr>
-        <th scope="row">Probabilities B</th>
-        <td><input type="number" class="form-control input-normal" placeholder="0" id="probB0"></td>
+        <th scope="row">Param2</th>
+        <td><input type="number" class="form-control input-normal" placeholder="0" id="area1"></td>
+        <td><input type="number" class="form-control input-normal" placeholder="0" id="probA1"></td>
         <td><input type="number" class="form-control input-normal" placeholder="0" id="probB1"></td>
+      </tr>
+      <tr>
+        <th scope="row">Param3</th>
+        <td><input type="number" class="form-control input-normal" placeholder="0" id="area2"></td>
+        <td><input type="number" class="form-control input-normal" placeholder="0" id="probA2"></td>
         <td><input type="number" class="form-control input-normal" placeholder="0" id="probB2"></td>
+      </tr>
+      <tr>
+        <th scope="row">Param4</th>
+        <td><input type="number" class="form-control input-normal" placeholder="0" id="area3"></td>
+        <td><input type="number" class="form-control input-normal" placeholder="0" id="probA3"></td>
         <td><input type="number" class="form-control input-normal" placeholder="0" id="probB3"></td>
-        </tr>
+      </tr>
       </tbody>
     </table>
 
@@ -49,4 +51,5 @@
   <button class="btn btn-primary btn-lg" type="button" onClick="updateRoulette()">Save</button>
   </form>
   <a href="./index.html" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Back</a>
+  <button class="btn btn-primary btn-lg" type="button" onClick="addParamRow()">Add Param</a>
 </body>
