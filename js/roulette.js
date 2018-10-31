@@ -36,7 +36,7 @@ function playRoulette() {
     $("#chart-area").rotate({
       angle: angle,
       animateTo: stopAngle,
-      callback: () => $("#result span").text(`${stopNumber}でした！`)
+      callback: () => $("#result span").text(`${JSON.parse(localStorage.getItem('areaNames'))[stopNumber - 1]}でした！`)
     });
     $("#hari img").attr('src', $("#hari img").attr('src').replace('gif', 'png'));
   }, timeout);
