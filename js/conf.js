@@ -1,5 +1,5 @@
 function updateRoulette() {
-  var succNum = $('#confTable').prop('rows').length
+  let succNum = $('#confTable').prop('rows').length
   localStorage.setItem('areaNames', JSON.stringify(
     _.range(1, succNum).map(i => $(`#areaName${i}`).text())
   ))
@@ -15,8 +15,8 @@ function updateRoulette() {
 }
 
 function addParamRow() {
-  var areaName = $('#areaN').val()
-  var succNum = $('#confTable').prop('rows').length
+  let areaName = $('#areaN').val()
+  let succNum = $('#confTable').prop('rows').length
   $('#confTable tbody').append(`<tr>\
                                          <th scope="row" id="areaName${succNum}">${areaName}</th>\
                                          <td><input type="number" class="form-control input-normal" placeholder="0" id="area${succNum}"></td>\
