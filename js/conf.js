@@ -12,7 +12,6 @@ function updateRoulette() {
   localStorage.setItem('probB', JSON.stringify(
     _.range(1, succNum).map(i => Number($(`#probB${i}`).val()))
   ))
-  alert('Roulette settings are updated!')
 }
 
 function addParamRow() {

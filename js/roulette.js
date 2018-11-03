@@ -72,6 +72,7 @@ $(() => {
     initialSlide: 1,
     on: {
       slideChange: () => {
+        updateRoulette();
         rouletteA.data.datasets[0].data = JSON.parse(localStorage.getItem('areas'))
         rouletteA.update()
         rouletteB.data.datasets[0].data = JSON.parse(localStorage.getItem('areas'))
