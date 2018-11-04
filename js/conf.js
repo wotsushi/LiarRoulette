@@ -14,13 +14,13 @@ function updateRoulette() {
   ))
 }
 
-function addParamRow() {
+function addParamRow(id) {
   let areaName = $('#areaN').val()
   let succNum = $('#confTable').prop('rows').length
   $('#confTable tbody').append(`<tr>\
                                          <td><div class="custom-control custom-checkbox">\
-                                         <input type="checkbox" class="custom-control-input" id="${"delete" + areaName}" name="paramDelete">\
-                                         <label class="custom-control-label" for="${"delete" + areaName}"></label></div></td>\
+                                         <input type="checkbox" class="custom-control-input" id="${"deleteParam" + id}" name="paramDelete">\
+                                         <label class="custom-control-label" for="${"deleteParam" + id}"></label></div></td>\
                                          <td><div id="areaName${succNum}">${areaName}</div></td>\
                                          <td><input type="number" class="form-control input-normal" placeholder="0" id="area${succNum}"></td>\
                                          <td><input type="number" class="form-control input-normal" placeholder="0" id="probA${succNum}"></td>\
@@ -40,7 +40,7 @@ $(() => {
   let areaNames = localStorage.getItem('areaNames')
   if (areaNames) {
     let n = JSON.parse(areaNames).length
-    _.range(n).forEach(i => addParamRow())
+    _.range(n).forEach(i => addParamRow(i))
     JSON.parse(localStorage.getItem('areaNames')).forEach((areaName, i) => $(`#areaName${i + 1}`).text(areaName))
     JSON.parse(localStorage.getItem('areas')).forEach((area, i) => $(`#area${i + 1}`).val(area))
     JSON.parse(localStorage.getItem('probA')).forEach((probA, i) => $(`#probA${i + 1}`).val(probA))
