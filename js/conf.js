@@ -18,12 +18,23 @@ function addParamRow() {
   let areaName = $('#areaN').val()
   let succNum = $('#confTable').prop('rows').length
   $('#confTable tbody').append(`<tr>\
-                                         <th scope="row" id="areaName${succNum}">${areaName}</th>\
+                                         <td><div class="custom-control custom-checkbox">\
+                                         <input type="checkbox" class="custom-control-input" id="${"delete" + areaName}" name="paramDelete">\
+                                         <label class="custom-control-label" for="${"delete" + areaName}"></label></div></td>\
+                                         <td><div id="areaName${succNum}">${areaName}</div></td>\
                                          <td><input type="number" class="form-control input-normal" placeholder="0" id="area${succNum}"></td>\
                                          <td><input type="number" class="form-control input-normal" placeholder="0" id="probA${succNum}"></td>\
                                          <td><input type="number" class="form-control input-normal" placeholder="0" id="probB${succNum}"></td>\
                                          </tr>`)
 }
+
+function deleteSelectedArea() {
+  $("[name=paramDelete]:checked").each(function(){
+    var row = $(this).closest("tr").remove();
+    $(row).remove();
+  });
+}
+
 
 $(() => {
   let areaNames = localStorage.getItem('areaNames')

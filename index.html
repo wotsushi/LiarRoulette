@@ -36,7 +36,7 @@
           <input type="text" class="form-control input-normal" placeholder="area" id="areaN">
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal" onClick="addParamRow()">Add</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal" onClick="addParamRow()">Add</span></button>
         </div>
       </div>
     </div>
@@ -48,7 +48,8 @@
         <table class="table table-sm table-condensed table-borderd" id="confTable">
           <thead class="thead-dark">
             <tr>
-              <th scope="col">#</th>
+              <th scope="col"></th>
+              <th scope="col">Area Name</th>
               <th scope="col">Areas</th>
               <th scope="col">Probabilities A</th>
               <th scope="col">Probabilities B</th>
@@ -59,7 +60,8 @@
         </table>
         <br>
       </form>
-      <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#confDialog" >Add Param</button>
+      <button class="btn btn-danger btn-lg" type="submit" onClick="deleteSelectedArea()"></span>Delete Param</button>
+      <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#confDialog" ></span>Add Param</button>
     </div>
 
     <div class="swiper-slide">
