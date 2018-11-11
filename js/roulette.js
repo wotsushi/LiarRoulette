@@ -54,6 +54,10 @@ function createRoulette(roulette) {
           window.chartColors.yellow,
           window.chartColors.green,
           window.chartColors.blue,
+          window.chartColors.orange,
+          window.chartColors.purple,
+          window.chartColors.brown,
+          window.chartColors.grey,
         ]
       }],
       labels: ['a', 'b', 'c', 'd']
