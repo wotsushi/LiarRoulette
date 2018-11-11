@@ -81,8 +81,15 @@ $(() => {
         rouletteA.update()
         rouletteB.data.datasets[0].data = JSON.parse(localStorage.getItem('areas'))
         rouletteB.update()
+      },
+      doubleTap () {
+        if (this.activeIndex === 1) {
+          playRoulette('A');
+        }
+        if (this.activeIndex === 2) {
+          playRoulette('B');
+        }
       }
     }
   });
-
 });
