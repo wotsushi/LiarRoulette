@@ -82,7 +82,7 @@ $(() => {
         rouletteB.data.datasets[0].data = JSON.parse(localStorage.getItem('areas'))
         rouletteB.update()
       },
-      doubleTap () {
+      tap () {
         if (this.activeIndex === 1) {
           playRoulette('A');
         }
