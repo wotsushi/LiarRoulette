@@ -59,14 +59,12 @@ function createRoulette(roulette) {
           window.chartColors.brown,
           window.chartColors.grey,
         ]
-      }],
-      labels: ['a', 'b', 'c', 'd']
+      }]
     },
     options: {
       responsive: false,
       legend: {
-        display: false,
-        onClick: e => e.stopPropagation()
+        display: false
       }
     }
   });
