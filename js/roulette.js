@@ -64,7 +64,10 @@ function createRoulette(roulette) {
     },
     options: {
       responsive: false,
-      legend: { display: false}
+      legend: {
+        display: false,
+        onClick: e => e.stopPropagation()
+      }
     }
   });
 }
